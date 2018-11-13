@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Workshops for the Festival</h2>
+<!-- new version -->
+{% if latest_courses_list %}
+{% regroup latest_courses_list by category_id  as courses_by_category %}
+
+{% for c in courses_by_category %}
+  <ul>
+    {% for course in c.list %}
+     
+      <li> <a href="/workshops/{{ course.id }}/">{{ course.course_name }}</a> 
+          
+          {% if course.custom_start_date %} {{ course.custom_start_date }} {% else %}
+          {{ course.get_course_days_of_week_display }}s  {% endif %} at {{ course.course_start_time }} at {{ course.location }}<p /></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+{% else %}
+    <p>No courses are available.</p>
+{% endif %}
+
+ {% endblock content %}
+

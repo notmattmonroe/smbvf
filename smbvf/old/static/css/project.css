@@ -1,0 +1,81 @@
+/* Display django-debug-toolbar.
+   See https://github.com/django-debug-toolbar/django-debug-toolbar/issues/742
+   and https://github.com/pydanny/cookiecutter-django/issues/317
+*/
+[hidden][style="display: block;"] {
+  display: block !important;
+}
+
+body {
+	background-color: #eee;
+}
+
+.fullwrap {
+	width: 960px;
+}
+
+.head {
+  margin-top: 15px;
+	width: 960px;
+    background: #ffffff url("../images/bg-top.png");
+	background-repeat:  no-repeat;
+	min-height: 418px;
+}
+
+.maincontent {
+	background: #ffffff url("../images/bg-content.png");
+	width: 960px;
+}
+.foot {
+	    background: #ffffff url("../images/bg-bottom.png");
+	background-repeat:  no-repeat;
+	min-height: 269px;
+	width: 960px;
+}
+.navbar {
+	width:100%;
+	text-align: center;
+	margin: auto;
+	margin-top: -15px;
+
+}
+.nav {
+	border-radius: 15px 15px 15px 15px;
+	font-weight: bold;
+}
+
+li a {
+	color: #360402;
+}
+
+.jumbotron {
+	margin-top: -20px;
+	max-width: 910px;
+}
+
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+       .navbar-collapse li a { font-size: 200%; color: #360402;}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+       .navbar-collapse li a { font-size: 200%; color: #360402;}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+       .navbar-collapse li a { font-size: 200%; color: #360402;}
+}

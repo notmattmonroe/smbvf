@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} {{ object.show_name }} - Van Ella Productions {% endblock %}
+
+{% block content %}
+
+<h2> {{ object.show_name }} {{ object.show_date }}</h2>
+<img src="/media/{{ object.show_image }}" class="courseheader"><br />
+<h3>{{ object.venue_id }},  {{ object.venue_id.location_address }}</h3>
+Doors: {{ object.show_doors }}<br />
+Show: {{ object.show_start }}
+<p />
+{{ object.show_notes }}
+<p />
+Tickets available at <a href="{{ object.show_ticket_link }}">Eventbrite</a> 
+<!--
+<h2>Featuring:</h2>
+from django basic apps, look at model/views for getting all members of the shows
+-->
+
+
+
+
+
+
+
+
+ {% endblock content %}
+

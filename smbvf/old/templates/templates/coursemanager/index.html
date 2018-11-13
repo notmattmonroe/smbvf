@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+ {% block content %}
+
+
+<!-- new version -->
+{% if latest_courses_list %}
+{% regroup latest_courses_list by category_id  as courses_by_category %}
+{% for c in courses_by_category %}
+  <h2>{{c.grouper}}</h2>
+  <ul>
+    {% for course in c.list %}
+      <li><a href="/classes-and-workshops/{{ course.id }}/">{{ course.course_name }}</a> with {{ course.course_instructor }},
+          {{ course.get_course_days_of_week_display }}s   at {{ course.course_start_time }}<p /></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+{% else %}
+    <p>No courses are available.</p>
+{% endif %}
+
+{% load social_share %}
+<!--
+{% post_to_facebook object_or_url "Facebook" %}
+{% post_to_twitter "{{object.title}}. Check it out!" object_or_url "Twitter" %}
+{% post_to_gplus object_or_url "Google+" %}
+   -->
+ {% endblock content %}
+

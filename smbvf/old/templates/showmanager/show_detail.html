@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Show List {% endblock %}
+
+{% block content %}
+
+<h2> {{ object.show_name }} {{ object.show_date }}</h2>
+
+{{ object.venue_id }}<p />
+${{ object.cover_21_plus }} for 21+, ${{ object.cover_18_20 }} 18 to 20.
+<p />
+{{ object.notes }}
+<p />
+
+<h2>Featuring:</h2>
+from django basic apps, look at model/views for getting all members of the shows
+
+
+
+{% endblock %}
